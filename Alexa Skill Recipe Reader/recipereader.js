@@ -1,3 +1,5 @@
+//OFFICAL ONE USED AT SUNHACKS2018
+
 // step : used to trasition to the next element in array
 
 // Alexa open easycook, [grilled or pbj], open easycook, step
@@ -50,7 +52,7 @@ const grilled = [
     '3 tablespoons butter, divided',
     '2 slices Cheddar cheese',
     'Preheat skillet over medium heat.',
-    'Generously butter one side of a slice of bread.',
+    'Generously butter one side of a slice of bread.', 
     'Place bread butter-side-down onto skillet bottom and add 1 slice of cheese.',
     'Butter a second slice of bread on one side and place butter-side-up on top of sandwich.',
     'Grill until lightly browned and flip over; continue grilling until cheese is melted.',
@@ -78,7 +80,7 @@ const handlers = {
         
         else
         {
-            this.emit(':ask', ' ' );
+            this.emit(':ask', 'Ready for next step' );
              start++;
         } 
         
@@ -87,7 +89,7 @@ const handlers = {
     {
         data = grilled;
             one = data[i];   
-           // if (i == 0) 
+           //if (i == 0) 
             this.emit(':tell', 'Recipe for grilled cheese found. \n' + one);
             //else 
            // this.emit(':tell', one);
@@ -95,10 +97,14 @@ const handlers = {
         
     },
     
-    'Next' : function()
+    'Next' : function() 
     {
         if (i == data.length)//base case
+        {
             this.emit(':tell', 'Finished steps');
+            i = 0; 
+            start = 0; 
+    }
         else if (i > 0)
         {
             one = data[i];
@@ -110,7 +116,7 @@ const handlers = {
     {
         data = pbj;
            one = data[i];   
-           // if (i == 0)
+          //if (i == 0)
             this.emit(':tell', 'Recipe for pbj found. \n' + one);
            // else 
             //this.emit(':tell', one);
@@ -119,11 +125,12 @@ const handlers = {
     },
     
     'GetFact': function () {
+        var ingredients = [];
         const factArr = ingredients;
         const factIndex = Math.floor(Math.random() * factArr.length);
         const randomFact = factArr[factIndex];
         const speechOutput = GET_FACT_MESSAGE + randomFact;
-
+ 
         this.response.cardRenderer(SKILL_NAME, randomFact);
         this.response.speak(speechOutput);
         this.emit(':responseReady');
