@@ -28,13 +28,11 @@ const STOP_MESSAGE = 'Goodbye!';
 //=========================================================================================================================================
 //TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/data
 //=========================================================================================================================================
-const ingredients = [
-    '1 teaspoon peanut butter',
-    '2 teaspoons any flavor fruit jelly',
-    '2 slices of bread'
-];
 
 const pbj = [
+    '1 teaspoon peanut butter',
+    '2 teaspoons any flavor fruit jelly',
+    '2 slices of bread',
     'Heat griddle or skillet to 350 degrees F (175 degrees C).',
     'Spread butter on one side of each slice of bread.',
     'Spread peanut butter on unbuttered side of one slice of bread, and jelly on the other.',
@@ -43,10 +41,16 @@ const pbj = [
     'Cook for 4 minutes on each side, or until golden brown, and heated through.',
     ];
     
-const pizza = 
-[
-    'add cheese',
-    'put in oven'
+const grilled = [
+    '4 slices white bread',
+    '3 tablespoons butter, divided',
+    '2 slices Cheddar cheese',
+    'Preheat skillet over medium heat.',
+    'Generously butter one side of a slice of bread.',
+    'Place bread butter-side-down onto skillet bottom and add 1 slice of cheese.',
+    'Butter a second slice of bread on one side and place butter-side-up on top of sandwich.',
+    'Grill until lightly browned and flip over; continue grilling until cheese is melted.',
+    'Repeat with remaining 2 slices of bread, butter and slice of cheese.',
 ];
 
 
@@ -77,10 +81,10 @@ const handlers = {
     },
     'Pizza' : function ()
     {
-        data = pizza;
+        data = grilled;
             one = data[i];   
            // if (i == 0) 
-            this.emit(':tell', 'Recipe for pizza found. \n' + one);
+            this.emit(':tell', 'Recipe for grilled cheese found. \n' + one);
             //else 
            // this.emit(':tell', one);
             i++;
