@@ -1,3 +1,7 @@
+// step : used to trasition to the next element in array
+
+// Alexa open easycook, [grilled or pbj], open easycook, step
+
 /* eslint-disable  func-names */
 /* eslint quote-props: ["error", "consistent"]*/
 /**
