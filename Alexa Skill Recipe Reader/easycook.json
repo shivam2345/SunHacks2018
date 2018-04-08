@@ -1,0 +1,76 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "easy cook",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NextIntent",
+                    "samples": []
+                },
+                {
+                    "name": "Pizza",
+                    "slots": [],
+                    "samples": [
+                        "Grilled Cheese",
+                        "Grilled Cheese Sandwich"
+                    ]
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "PBJ",
+                    "slots": [],
+                    "samples": [
+                        "PBJ",
+                        "PBJ please"
+                    ]
+                },
+                {
+                    "name": "Next",
+                    "slots": [],
+                    "samples": [
+                        "yes",
+                        "next step",
+                        "next",
+                        "step"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "food",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "pbj"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pizza"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
